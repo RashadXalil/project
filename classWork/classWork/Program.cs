@@ -7,8 +7,9 @@ int faiz = 0;
 int umumiOdenilecek = 0;
 int ayliqOdenis=0;
 int borc=0;
+
 Console.WriteLine("\t\t\t\t\tWelcome to Bank!");
-Console.WriteLine("\t\t\t\t----------------------------");
+Console.WriteLine("\t\t\t\t---------------------------");
 Console.WriteLine("\t\t\t\t\t   Login");
 
 yenidenYoxla:
@@ -25,28 +26,27 @@ if (username == "vusal" && password == "12345")
     Console.WriteLine("\t\t\t\t----------------------------");
     Console.WriteLine();
     Console.WriteLine(" 1. Kretdit goturmek \n 2. Kredit odemek \n 3. hesabat");
-
     Console.Write("Edeceyiniz emeliyyati secin :");
     emeliyyat = Console.ReadLine();
+
     if (emeliyyat == "1")
     {
         Console.Write("Ay daxil edin: ");
         ay = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Mebleg daxil edin: ");
+        mebleg = Convert.ToInt32(Console.ReadLine());
+
         if (ay >= 0 && ay <= 12 && mebleg >= 0)
-        {
-            Console.Write("Mebleg daxil edin: ");
-            mebleg = Convert.ToInt32(Console.ReadLine());
+        {            
             umumiOdenilecek = mebleg * 12 / 100;
             umumiOdenilecek = mebleg + umumiOdenilecek;
 
-            Console.WriteLine("Odenilecek mebleg: " + umumiOdenilecek);
+            Console.WriteLine("Umumi odenilecek mebleg: " + umumiOdenilecek);
             ayliqOdenis = umumiOdenilecek / ay;
-            Console.WriteLine("Odenilecek mebleg: " + ayliqOdenis);
+            Console.WriteLine("Ayliq odenilecek mebleg: " + ayliqOdenis);
         }
-        else if (ay >= 13 && mebleg > 0)
+        else if (ay >= 13 && mebleg >= 0)
         {
-            Console.Write("Mebleg daxil edin: ");
-            mebleg = Convert.ToInt32(Console.ReadLine());
             umumiOdenilecek = mebleg * 18 / 100;
             umumiOdenilecek = mebleg + umumiOdenilecek;
 
@@ -57,6 +57,8 @@ if (username == "vusal" && password == "12345")
         else
         {
             Console.WriteLine("Emeliyyat ugursuz oldu !");
+            mebleg = 0;
+            ay = 0;
             goto basaQayit;
         }
         Console.WriteLine("Razisiniz? \n 1.Beli \n 2.Xeyr");
@@ -87,30 +89,45 @@ if (username == "vusal" && password == "12345")
         {
             Console.Write("Ayliq odenis: ");
             ayliqOdenis = Convert.ToInt32(Console.ReadLine());
-        odemeEmeliyyati:
-            Console.Write("Odemek ucun 1 basin: ");
-            int odemek = Convert.ToInt32(Console.ReadLine());
-            if (odemek == 1)
-            {
-                borc = borc - ayliqOdenis;
-                int qaliq = Convert.ToInt32(ayliqOdenis);
-                if (borc > 0)
+            if (ayliqOdenis >= 0)
+            {               
+                odemeEmeliyyati:
+                Console.Write("Odemek ucun 1 basin: ");
+                int odemek = Convert.ToInt32(Console.ReadLine());
+                if (odemek == 1)
                 {
-                    Console.WriteLine("Emeliyyat ugurlu oldu!");
-                    Console.WriteLine("Qalan borc: " + borc);
-                    Console.WriteLine("Qalan ay: " + (--ay));
+                    borc = borc - ayliqOdenis;
+                    int qaliq = Convert.ToInt32(borc * (-1));
+                    if (borc > 0)
+                    {
+                        Console.WriteLine("Emeliyyat ugurlu oldu!");
+                        Console.WriteLine("Qalan borc: " + borc);
+                        Console.WriteLine("Qalan ay: " + (--ay));
+                    }
+                    else if (borc <= 0)
+                    {
+                        Console.WriteLine("Sizin borcunuz bitdi ! Qaliq mebleg: " + (qaliq));
+                        
+                         mebleg = 0;
+                         ay = 0;
+                         faiz = 0;
+                         umumiOdenilecek = 0;
+                         ayliqOdenis = 0;
+                         borc = 0;
+
+                    }
+                    goto basaQayit;
                 }
-                else if (borc <= 0)
+                else
                 {
-                    Console.WriteLine("Sizin borcunuz bitdi ! Qaliq mebleg: " + (qaliq) );
-                    Console.WriteLine("sizin borcunuz yoxdur");
+                    Console.WriteLine("Odeme emeliyyati yanlisdir!");
+                    goto odemeEmeliyyati;
                 }
-                goto basaQayit;
             }
             else
             {
-                Console.WriteLine("Odene emeliyyati yanlisdir!");
-                goto odemeEmeliyyati;
+                Console.WriteLine("Melumatlar duzgun deyil!");
+                goto basaQayit;
             }
         }
         else
@@ -118,6 +135,12 @@ if (username == "vusal" && password == "12345")
             Console.WriteLine("-------------------------");
             Console.WriteLine("Sizin borcunuz yoxdur!");
             Console.WriteLine("-------------------------");
+            mebleg = 0;
+            ay = 0;
+            faiz = 0;
+            umumiOdenilecek = 0;
+            ayliqOdenis = 0;
+            borc = 0;
             goto basaQayit;
         }
     }
@@ -132,6 +155,12 @@ if (username == "vusal" && password == "12345")
         else
         {
             Console.WriteLine("Sizin borcunuz yoxdur!");
+            mebleg = 0;
+            ay = 0;
+            faiz = 0;
+            umumiOdenilecek = 0;
+            ayliqOdenis = 0;
+            borc = 0;
         }
         goto basaQayit;
 
