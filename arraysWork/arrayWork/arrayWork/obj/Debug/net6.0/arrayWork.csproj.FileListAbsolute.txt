@@ -1,0 +1,15 @@
+C:\Users\PC\source\repos\arrayWork\arrayWork\bin\Debug\net6.0\arrayWork.exe
+C:\Users\PC\source\repos\arrayWork\arrayWork\bin\Debug\net6.0\arrayWork.deps.json
+C:\Users\PC\source\repos\arrayWork\arrayWork\bin\Debug\net6.0\arrayWork.runtimeconfig.json
+C:\Users\PC\source\repos\arrayWork\arrayWork\bin\Debug\net6.0\arrayWork.dll
+C:\Users\PC\source\repos\arrayWork\arrayWork\bin\Debug\net6.0\arrayWork.pdb
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.AssemblyInfo.cs
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.dll
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\refint\arrayWork.dll
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.pdb
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\arrayWork.genruntimeconfig.cache
+C:\Users\PC\source\repos\arrayWork\arrayWork\obj\Debug\net6.0\ref\arrayWork.dll
