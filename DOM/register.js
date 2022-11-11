@@ -9,13 +9,20 @@ const liste = document.getElementById('table');
 const tbody = document.getElementById('tbodyID');
 
 myButton.onclick=function(){
+    if(nameInput.value=="", surnameInput.value=="", ageInput.value=="", expreinceInput.value=="")
+    {
 
+    }
+    else{
+    const deleteElement = document.createElement("button");
+    deleteElement.innerHTML = "delete";
+   
     let tName = document.createElement('td');
     let tSurname = document.createElement('td')
     let tAge = document.createElement('td');
     let tEpreince = document.createElement('td');
     let tNational = document.createElement('td');
-    let tPosition = document.createElement('td');
+    let tPosition = document.createElement('td');    
 
     tName.textContent = nameInput.value;
     tSurname.textContent=surnameInput.value;
@@ -23,6 +30,7 @@ myButton.onclick=function(){
     tEpreince.textContent=expreinceInput.value;
     tNational.innerHTML= selectNational.value;
     tPosition.innerHTML = selectPosition.value;
+  
 
     let tr = document.createElement('tr');
 
@@ -32,13 +40,21 @@ myButton.onclick=function(){
     tr.appendChild(tEpreince);
     tr.appendChild(tNational);
     tr.appendChild(tPosition);
+    tr.appendChild(deleteElement);   
 
     tbody.appendChild(tr);
+
+    deleteElement.addEventListener('click', function () {
+        tr.remove();
+    })
     
     nameInput.value="";
     surnameInput.value="";
     ageInput.value="";
-    tEpreince.value="";
+    expreinceInput.value="";
+  
 
     nameInput.focus();
 }
+}
+
