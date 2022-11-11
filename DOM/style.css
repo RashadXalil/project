@@ -1,0 +1,15 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: 20px;
+}
+input{
+    margin-bottom: 4px;
+}
+select{
+    margin: 4px;
+}
+body{
+    background-color:ivory;
+}
